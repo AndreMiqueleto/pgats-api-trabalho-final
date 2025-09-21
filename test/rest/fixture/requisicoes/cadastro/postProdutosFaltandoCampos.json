@@ -1,0 +1,33 @@
+[
+    {
+    "nomeDoTeste": "Cadastro de produto faltando o nome",
+    "postProdutos": {
+            "name": "",
+            "type": "Curso",
+            "price": 25000
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "All fields required"
+    },
+    {
+    "nomeDoTeste": "Cadastro de produto faltando o tipo",
+    "postProdutos": {
+            "name": "Cypress - O Guia Definitivo",
+            "type": "",
+            "price": 200
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "All fields required"
+    },
+    {
+    "nomeDoTeste": "Cadastro de produto faltando o preço",
+    "postProdutos": {
+            "name": "Desenvolvimento backend com Node JS",
+            "type": "Curso",
+            "price": ""
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "All fields required"
+    }
+
+]

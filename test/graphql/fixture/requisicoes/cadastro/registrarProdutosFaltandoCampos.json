@@ -1,0 +1,39 @@
+[
+    {
+        "nomeDoTeste": "Cadastro de produto faltando o nome",
+        "registerProduct": {
+        "query": "mutation RegisterProduct($name: String!, $type: String!, $price: Float!) { registerProduct(name: $name, type: $type, price: $price)}",
+        "variables":{
+                "name": "",
+                "type": "Curso",
+                "price": 25000
+        }
+    },
+        "mensagemEsperada": "All fields required"
+    },
+    {
+        "nomeDoTeste": "Cadastro de produto faltando o tipo",
+        "registerProduct": {
+        "query": "mutation RegisterProduct($name: String!, $type: String!, $price: Float!) { registerProduct(name: $name, type: $type, price: $price)}",
+        "variables": {
+            "name": "Cypress - O Guia Definitivo",
+            "type": "",
+            "price": 200
+         }
+    },
+        "mensagemEsperada": "All fields required"
+    },
+    {
+        "nomeDoTeste": "Cadastro de produto faltando o preço",
+        "registerProduct": {
+        "query": "mutation RegisterProduct($name: String!, $type: String!, $price: Float!) { registerProduct(name: $name, type: $type, price: $price)}",
+        "variables": {
+                "name": "Desenvolvimento backend com Node JS",
+                "type": "Curso",
+                "price": 0.0
+         }
+    },
+        "mensagemEsperada": "All fields required"
+    }
+]
+
