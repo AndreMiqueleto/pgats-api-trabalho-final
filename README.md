@@ -3,6 +3,7 @@
 ## Descrição
 API para vendas de livros e cursos, com autenticação JWT, regras de negócio, documentação Swagger e interface GraphQL via Apollo Server. O banco de dados é em memória, ideal para testes automatizados.
 
+
 ## Instalação
 
 1. Clone o repositório
