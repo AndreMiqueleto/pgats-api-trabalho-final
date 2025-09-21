@@ -1,7 +1,7 @@
 # E-commerce Livros e Cursos API
 
 ## Descrição
-API para vendas de livros e cursos, com autenticação JWT, regras de negócio, documentação Swagger e interface GraphQL via Apollo Server.
+API para vendas de livros e cursos, com autenticação JWT, regras de negócio, documentação Swagger e interface GraphQL via Apollo Server para validar testes de API Rest (A nivel de controller e external) e GraphQL(external).
 
 ## Instalação
 
