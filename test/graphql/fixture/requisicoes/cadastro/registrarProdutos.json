@@ -1,0 +1,8 @@
+{
+    "query": "mutation RegisterProduct($name: String!, $type: String!, $price: Float!) { registerProduct(name: $name, type: $type, price: $price)}",
+    "variables": {
+      "name": "Automacao de testes com Python",
+      "type": "Curso",
+      "price": 100
+    }
+}

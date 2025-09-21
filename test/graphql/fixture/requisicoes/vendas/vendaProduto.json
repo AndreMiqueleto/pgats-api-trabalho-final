@@ -1,0 +1,8 @@
+{
+  "query": "mutation ($productName: String!, $quantity: Int!, $coupon: String) { sell(productName: $productName, quantity: $quantity, coupon: $coupon) { price message } }",
+  "variables": {
+    "productName": "Fundamentos de API",
+    "quantity": 1,
+    "coupon": "DIADOPROGRAMADOR"
+  }
+}

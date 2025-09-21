@@ -1,0 +1,126 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "E-commerce Livros e Cursos API",
+    "version": "1.0.0",
+    "description": "API REST para vendas de livros e cursos."
+  },
+  "paths": {
+    "/users/register": {
+      "post": {
+        "summary": "Registrar usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Usuário registrado" },
+          "409": { "description": "Usuário já existe" }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "Login do usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Token JWT" },
+          "401": { "description": "Credenciais inválidas" }
+        }
+      }
+    },
+    "/products/register": {
+      "post": {
+        "summary": "Registrar produto",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "type": { "type": "string" },
+                  "price": { "type": "number" }
+                },
+                "required": ["name", "type", "price"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Produto registrado" }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Listar produtos",
+        "responses": {
+          "200": { "description": "Lista de produtos" }
+        }
+      }
+    },
+    "/sales": {
+      "post": {
+        "summary": "Realizar venda",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "productName": { "type": "string" },
+                  "quantity": { "type": "integer" },
+                  "coupon": { "type": "string" }
+                },
+                "required": ["productName", "quantity"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Venda realizada" },
+          "400": { "description": "Erro de regra de negócio" },
+          "401": { "description": "Token ausente" },
+          "403": { "description": "Token inválido" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

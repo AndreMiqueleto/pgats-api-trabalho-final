@@ -1,0 +1,53 @@
+[
+    {
+    "nomeDoTeste": "Nome do produto sem preencher",
+    "postVendas": {
+        "productName": "",
+        "quantity": 1,
+        "coupon": "DIADOPROGRAMADOR"
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "Product and quantity required"
+    },
+    {
+    "nomeDoTeste": "Quantidade não preenchida",
+    "postVendas": {
+        "productName": "Fundamentos de API",
+        "quantity": "",
+        "coupon": "DIADOPROGRAMADOR"
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "Product and quantity required"
+    },
+    {
+    "nomeDoTeste": "Quantidade de items ultrapassa o limite máximo - 3 por venda",
+    "postVendas": {
+        "productName": "Fundamentos de API",
+        "quantity": "4",
+        "coupon": "DIADOPROGRAMADOR"
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "Max 3 items per sale"
+    },
+    {
+    "nomeDoTeste": "Produto não encontrado",
+    "postVendas": {
+        "productName": "As aventuras de Timtim",
+        "quantity": "1",
+        "coupon": "DIADOPROGRAMADOR"
+    },
+        "statusCode": 404,
+        "mensagemEsperada": "Product not found"
+    },
+    {
+    "nomeDoTeste": "CUPOM Invalido",
+    "postVendas": {
+        "productName": "Node JS",
+        "quantity": "1",
+        "coupon": "DIADOSAVOS"
+    },
+        "statusCode": 400,
+        "mensagemEsperada": "Invalid coupon"
+    }
+]
+
