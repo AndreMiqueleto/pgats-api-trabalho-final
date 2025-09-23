@@ -13,15 +13,19 @@ module.exports = {
     login: (_, { username, password }) => {
       return userService.loginUser({ username, password }).token;
     },
-    registerProduct: (_, { name, type, price }) => {
-      return productService.registerProduct({ name, type, price }).message;
+    // registerProduct: (_, { name, type, price }) => {
+    //   return productService.registerProduct({ name, type, price }).message;
+    // },
+
+    registerProduct: async (_, { name, type, price }) => {
+        const result = await productService.registerProduct({ name, type, price });
+        return result.message;
     },
 
-    // Resolver ajustado para devolver message e price corretamente
-    sell: (_, { productName, quantity, coupon }, context) => {
+    sell: async(_, { productName, quantity, coupon }, context) => {
       try {
         const username = context?.user?.username; // pega usuário do contexto (se houver)
-        const result = saleService.sellProduct({ username, productName, quantity, coupon });
+        const result = await saleService.sellProduct({ username, productName, quantity, coupon });
 
         // result já contém { username, productName, quantity, price, message }
         // retornamos explicitamente os campos que queremos expor no GraphQL

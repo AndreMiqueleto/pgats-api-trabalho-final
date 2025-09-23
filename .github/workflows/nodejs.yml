@@ -36,8 +36,11 @@ jobs:
     - name: Executar os testes de API REST via HTTP
       run: npm run test-external-rest
     
-    - name: Rodar os testes de API via Controller
+    - name: Rodar os testes de API REST via Controller
       run: npm run test-controller-rest
 
     - name: Executar os testes de API GRAPHQL
       run: npm run test-external-graphql
+    
+    - name: Rodar os testes de API GRAPHQL via Controller
+      run: npm run test-controller-graphql
