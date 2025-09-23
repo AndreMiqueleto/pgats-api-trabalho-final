@@ -14,7 +14,7 @@ describe('Sale', () => {
 
          const createRegister = require('../fixture/requisicoes/cadastro/registrarProdutos.json')
 
-         it("Testando o cadastro com sucesso de um produto - Status Code 201", async () => {
+         it("Testando o cadastro com sucesso de um produto - Status Code 200", async () => {
             const respostaCadastro = await request(process.env.BASE_URL_GRAPHQL)
                 .post("")
                 .send(createRegister);
